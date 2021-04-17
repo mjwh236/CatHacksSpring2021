@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Home</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-
+    <title>DFIING HOME</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
 </head>
 
-<body>
-    <div class="jumbotron text-center">
-        <h1>hackerman</h1>
-        <input type="button" value="see the matrix" onClick="window.open( 'matrix.html', 'rating', 'width=450,height=315,left=150,top=200');">
-        <input type="button" value="crack the password" onClick="window.open( 'crack.html', 'rating', 'width=450,height=315,left=150,top=200');">
+<body id="home">
+    <div id="logo">
+        <img src="DFIINGlogo.png" width="90%">
+    </div>
+    <div id="buttons">
+        <img src="System-explorer-icon.png" width="75px" padding="20px" onclick="showFiles()">
+        <img src="Earth-icon.png" width="75px" padding="20px" onclick="showMatrix()">
+        <a href="index.html"><img src="Terminal-icon.png" width="80px" padding="20px"></a>
+    </div>
 
+    <div id="window" style="width:480px; height: 275px; display: none;">
+        <div id="windowheader">The Matrix</div>
+        <p id="matrixText">Text</p>
+    </div>
+    <div id="files" style="width:480px; height: 275px; display: none;">
+        <div id="filesheader">DFIING File System</div>
+        <p id="filesText">Text</p>
     </div>
 </body>
 
