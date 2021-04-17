@@ -19,22 +19,23 @@
     <script>
         var alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
-            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'
+            '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', ';', ':', '[', '{', ']', '}',
+            '\\', '|', '"', "'", ',', '<', '.', '>', '/', '?'
         ];
 
         function rand() {
             var str = "";
             for (var i = 1; i < 97; i++) {
-                var r1 = Math.round(Math.random() * 61);
-                var r2 = Math.round(Math.random() * 61);
-                var r3 = Math.round(Math.random() * 61);
-                var r4 = Math.round(Math.random() * 61);
-                var r5 = Math.round(Math.random() * 61);
-                var r6 = Math.round(Math.random() * 61);
-                var r7 = Math.round(Math.random() * 61);
-                var r8 = Math.round(Math.random() * 61);
-                var r9 = Math.round(Math.random() * 61);
-                var r0 = Math.round(Math.random() * 61);
+                var r1 = Math.round(Math.random() * (alpha.length - 1));
+                var r2 = Math.round(Math.random() * (alpha.length - 1));
+                var r3 = Math.round(Math.random() * (alpha.length - 1));
+                var r4 = Math.round(Math.random() * (alpha.length - 1));
+                var r5 = Math.round(Math.random() * (alpha.length - 1));
+                var r6 = Math.round(Math.random() * (alpha.length - 1));
+                var r7 = Math.round(Math.random() * (alpha.length - 1));
+                var r8 = Math.round(Math.random() * (alpha.length - 1));
+                var r9 = Math.round(Math.random() * (alpha.length - 1));
+                var r0 = Math.round(Math.random() * (alpha.length - 1));
 
                 var curr = str;
                 console.log(curr);
