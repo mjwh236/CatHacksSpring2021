@@ -1,12 +1,12 @@
 let prompt = "user@CatHacks:~> ";
-let text = "ssh exchangeServerAdmin@dfiing.net -c SHA256 -E logs.t"+
-    "\n\`root password: ****************"+
-    "\n^ \n\`passwordCracker -t exchangeServerAdmin@dfiing.net\n^\`"+
-    "ls -a\n\^\n\`cd Confidential\nls -a\n\^\n\`cat StaticNetworkIPs.txt\n\^\`mysql -h 168.69.69.42 -p -u admin "+
-    "\n\^****************\n\`USE admin;\n\^\n\`SHOW TABLES;\n\`SELECT fName, Lname WHERE SecurityClearence = 10;"+
-    "\n\^\n\`SELECT DISTINCT TABLE_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE COLUMN_NAME IN (\'admin\') AND"+
-    " TABLE_SCHEMA=\'admin\' INTO OUTFILE \'tmp/pwned.txt\';"+
-    "\n\`exit;\n\`scp -c SHA256 exchangeServerAdmin@dfiing.net /tmp/pwned.txt user@CatHacks:22 ~/word.txt"+
+let text = "ssh exchangeServerAdmin@dfiing.net -c SHA256 -E logs.t" +
+    "\n\`root password: ****************" +
+    "\n^ \n\`passwordCracker -t exchangeServerAdmin@dfiing.net\n^\`" +
+    "ls -a\n\^\n\`cd Confidential\nls -a\n\^\n\`cat StaticNetworkIPs.txt\n\^\`mysql -h 168.69.69.42 -p -u admin " +
+    "\n\^****************\n\`USE admin;\n\^\n\`SHOW TABLES;\n\`SELECT fName, Lname, position WHERE SecurityClearance = 10;" +
+    "\n\^\n\`SELECT DISTINCT TABLE_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE COLUMN_NAME IN (\'admin\') AND" +
+    " TABLE_SCHEMA=\'admin\' INTO OUTFILE \'tmp/pwned.txt\';" +
+    "\n\`exit;\n\`scp -c SHA256 exchangeServerAdmin@dfiing.net /tmp/pwned.txt user@CatHacks:22 ~/word.txt" +
     "\n\`rm /tmp/pwned.txt\n\`";
 let blockNum = 0;
 let textIndex = 0;
@@ -17,22 +17,23 @@ let block = ["ACCESS DENIED",
     "admin: 1.0.0.0\nFTPserver: 1.0.0.1\nlogsServer: 128.0.0.1\nserviceWorker: 1.0.0.0\nmysqlserver: 168.69.69.42\n",
     "Enter Password: ",
     "+-------------------+\n| Tables_in_admin   |\n+-------------------+\n| employees         |\n| users             |\n| servers           |\n+-------------------+",
-    "+-----------+--------------+\n| firstName | lastName     |\n+-----------+--------------+\n"+
-    "| John      | Wick         |\n"+
-    "| Tony      | Stark        |\n"+
-    "| Stephen   | Strange      |\n"+
-    "| Bob       | Doe          |\n"+
-    "| Bowman    | Wildcat      |\n"+
-    "| Kroger    | Market Place |\n"+
-    "| Johnny    | Walker       |\n"+
-    "| Jack      | Daniels      |\n"+
-    "| Captain   | Morgan       |\n"+
-    "| Jim       | Beam         |\n"+
-    "| James     | Bond         |\n"+
-    "| Vesper    | Lynd         |\n"+
-    "| Pappy     | Winkle       |\n"+
-    "| Elijah    | Craig        |\n+-----------+--------------+",
-    ""];
+    "+----------+-----------+-------------------+\n| firstName | lastName | position          |\n+----------+-----------+-------------------+\n" +
+    "| Adam     | Martinson | Chief Finance     |\n" +
+    "| Rosaleen | Pavia     | Head Researcher   |\n" +
+    "| Felix    | Butler    | Exec. Assistant   |\n" +
+    "| Marshall | Gimondi   | Chief Operating   |\n" +
+    "| Camilla  | Ellery    | Public Relations  |\n" +
+    "| May      | McGinnis  | Vice-President    |\n" +
+    "| Amleto   | Trujillo  | AI Specialist     |\n" +
+    "| Mary Jo  | Enns      | Chief Technology  |\n" +
+    "| Andre    | Granger   | Chief Admin.      |\n" +
+    "| Beau     | Randal    | Chief Marketing   |\n" +
+    "| Jay      | Pfeiffer  | Human Resources   |\n" +
+    "| Brendon  | Martelli  | Chief Executive   |\n" +
+    "| Chance   | Geiger    | Chief Information |\n" +
+    "| Savio    | Lang      | President         |\n+----------+-----------+-------------------+",
+    ""
+];
 let y = document.getElementById("terminal");
 let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
@@ -47,9 +48,9 @@ y.innerHTML = prompt;
 //Make the DIV element draggagle:
 dragElement(document.getElementById("window"));
 
-function cursorFlash(){
+function cursorFlash() {
     var last = y.innerHTML;
-    if(last.charAt(last.length - 1) === "|"){
+    if (last.charAt(last.length - 1) === "|") {
         last = setCharAt(last, last.length - 1, "");
         y.innerHTML = last;
     }
@@ -58,18 +59,18 @@ function cursorFlash(){
 function hackerKeyPress() {
 
     var last = y.innerHTML;
-    if(last.charAt(last.length - 1) === "|"){
+    if (last.charAt(last.length - 1) === "|") {
         last = setCharAt(last, last.length - 1, "");
         y.innerHTML = last;
     }
 
-    if(text.charAt(textIndex) == "^"){
-        if(blockNum == 1){
+    if (text.charAt(textIndex) == "^") {
+        if (blockNum == 1) {
             prompt = "root:~> "
         }
         y.innerHTML += block[blockNum];
         blockNum++;
-    } else if(text.charAt(textIndex) == "\`"){
+    } else if (text.charAt(textIndex) == "\`") {
         y.innerHTML += prompt;
     } else {
         var str = y.innerHTML;
@@ -83,43 +84,46 @@ function hackerKeyPress() {
 
 
 function dragElement(elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
     if (document.getElementById(elmnt.id + "header")) {
-    /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
     } else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    elmnt.onmousedown = dragMouseDown;
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
     }
 
     function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
     }
 
     function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     }
 
     function closeDragElement() {
-    /* stop moving when mouse button is released:*/
-    document.onmouseup = null;
-    document.onmousemove = null;
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
     }
 }
 
@@ -155,7 +159,7 @@ function matrix() {
     y.innerText = m;
 }
 
-function setCharAt(str,index,chr) {
-    if(index > str.length-1) return str;
-    return str.substring(0,index) + chr + str.substring(index+1);
+function setCharAt(str, index, chr) {
+    if (index > str.length - 1) return str;
+    return str.substring(0, index) + chr + str.substring(index + 1);
 }
