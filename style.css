@@ -9,8 +9,9 @@ body {
     z-index: 9;
     text-align: center;
     border: 1px solid #FFFFFF;
+    background-color: black;
 }
-  
+
 #windowheader {
     padding: 2px;
     cursor: move;
