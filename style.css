@@ -1,6 +1,10 @@
+:root{
+    --main-color: rgb(52, 179, 73);
+}
+
 body {
     background-color: black;
-    color: rgb(52, 179, 73);
+    color: var(--main-color);
     font-family: monospace;
 }
 
@@ -11,11 +15,37 @@ body {
     border: 1px solid #FFFFFF;
     background-color: black;
 }
-
+  
 #windowheader {
     padding: 2px;
     cursor: move;
     z-index: 10;
-    background-color: rgb(52, 179, 73);
+    background-color: var(--main-color);
     color: #fff;
+}
+
+#files {
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    background-color: black;
+}
+  
+#filesheader {
+    padding: 2px;
+    cursor: move;
+    z-index: 10;
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+#showMatrix {
+    position: absolute; 
+    right: 0;
+}
+
+#matrix {
+    background-color: aquamarine; 
+    padding: 16px 32px;
 }
