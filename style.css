@@ -1,0 +1,20 @@
+body {
+    background-color: black;
+    color: rgb(52, 179, 73);
+    font-family: monospace;
+}
+
+#window {
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+}
+  
+#windowheader {
+    padding: 2px;
+    cursor: move;
+    z-index: 10;
+    background-color: rgb(52, 179, 73);
+    color: #fff;
+}
