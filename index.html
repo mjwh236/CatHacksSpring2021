@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <title></title>
 </head>
 <body onkeypress="hackerKeyPress()">
-<div id="window" style="width:480px; height: 275px;">
+<div id="window" style="width:480px; height: 275px; display: none;">
     <div id="windowheader">The Matrix</div>
     <p id="matrixText">Text</p>
+</div>
+<div id="files" style="width:480px; height: 275px; display: none;">
+    <div id="filesheader">DFIING File System</div>
+    <p id="filesText">Text</p>
 </div>
 <div class="container" style="white-space: pre-wrap; display: flex; position: fixed; bottom: 5px">
     <span id = "terminal" ></span>
 </div>
+<div id="showMatrix"><button id="matrix" onclick="showMatrix()">Click for the Matrix</button></div>
+<div id="showFiles"><button id="filesButton" onclick="showFiles()">Click for the Matrix</button></div>
 <script src="index.js"></script>
 </body>
 </html>
