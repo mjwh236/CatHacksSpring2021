@@ -206,3 +206,10 @@ function setCharAt(str,index,chr) {
     return str.substring(0,index) + chr + str.substring(index+1);
 }
 
+function hideTerminal(){
+    var x = document.getElementById("terminal");
+    if (x.style.display != "none") {
+        x.style.display = "none";
+        //x.style.display = "flex";
+    }
+}

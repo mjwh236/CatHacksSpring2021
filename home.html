@@ -19,10 +19,12 @@
 
     <div id="window" style="width:480px; height: 275px; display: none;">
         <div id="windowheader">The Matrix</div>
+        <div style="  position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="showMatrix()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
         <p id="matrixText">Text</p>
     </div>
     <div id="files" style="display: none;">
         <div id="filesheader">DFIING File System</div>
+        <div style="  position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="showFiles()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
         <p id="filesText">Home</p>
     <span id = "folders1">
         <button style="padding: 16px 32px;" onclick="showEmployees()">Employees</button>
@@ -44,9 +46,9 @@
     </div>
     <div id="terminal" style="width: 600px; height: 400px; white-space: pre-wrap;  display: none; overflow: hidden;">
         <div id="terminalheader" style="position: absolute; top: 0; width: 100%;">Terminal</div>
+        <div style="  position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="hideTerminal()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
         <div id = "terminalText" style=" position: absolute; bottom: 0; padding: 5px;"></div>
     </div>
     <script src="app.js"></script>
 </body>
-
 </html>
