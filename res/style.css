@@ -25,6 +25,29 @@ body {
     padding: 20px;
 }
 
+#leak {
+    bottom: 20px;
+    right: 20px;
+    position: absolute;
+}
+
+#leakFiles {
+    position: absolute;
+    z-index: 9;
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    background-color: whitesmoke;
+    color: black;
+}
+
+#leakheader {
+    padding: 5px;
+    cursor: move;
+    z-index: 10;
+    background-color: var(--main-color);
+    color: #fff;
+}
+
 #window {
     position: absolute;
     z-index: 9;
