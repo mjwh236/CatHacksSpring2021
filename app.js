@@ -236,3 +236,35 @@ function hideIntro() {
         x.style.display = "none";
     }
 }
+
+
+// redactied, redacted 3, fax
+function validateLeak(){
+    var first = document.getElementById("firstLeak");
+    var second = document.getElementById("secondLeak");
+    var third = document.getElementById("thirdLeak");
+    console.log(first.value);
+    console.log(second.value);
+    console.log(third.value);
+    if(first.value == "REDACTED" || first.value == "REDACTED3" || first.value == "FAX"){
+        if(second.value == "REDACTED" || second.value == "REDACTED3" || second.value == "FAX"){
+            if(third.value == "REDACTED" || third.value == "REDACTED3" || third.value == "FAX"){
+                console.log("Success!");
+                document.getElementById("tryAgain").innerHTML = "";
+                showWin();
+                return;
+            }
+        }
+    }
+    document.getElementById("tryAgain").innerHTML = "Try Again!";
+    console.log("try again!");
+}
+
+function showWin(){
+    var x = document.getElementById("winMessage");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
