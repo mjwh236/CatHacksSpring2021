@@ -177,7 +177,7 @@ function showTerminal(){
     }
 }
 
-function hackerKeyPress(e) {
+function hackerKeyPress() {
     //console.log("Key pressed");
 
     y = document.getElementById("terminalText");
