@@ -64,7 +64,6 @@ body {
 }
 
 #filesButton {
-    background-color: var(--main-color);
     padding: 10px 10px;
     margin: 30px 20px;
 }
@@ -101,4 +100,18 @@ body {
     text-align: center;
     background-color: var(--main-color);
     color: #fff;
+}
+
+#intro {
+    background-color: rgba(245, 245, 245, 0.9);
+    color: black;
+    text-align: center;
+    width: 800px;
+    padding: 20px 40px;
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
 }
