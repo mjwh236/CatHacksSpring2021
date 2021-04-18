@@ -43,7 +43,7 @@ let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n
 
 let userInput = false;
 //let y = document.getElementById("terminal");
-document.getElementById("terminalText").innerHTML = prompt; 
+document.getElementById("terminalText").innerHTML = prompt;
 var myVar = setInterval(matrix, 250);
 dragElement(document.getElementById("window"));
 dragElement(document.getElementById("files"));
@@ -52,44 +52,47 @@ dragElement(document.getElementById("terminal"));
 
 function dragElement(elmnt) {
     //console.log(elmnt.innerHTML);
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    var pos1 = 0,
+        pos2 = 0,
+        pos3 = 0,
+        pos4 = 0;
     //ocument.getElementById(elmnt.id + "header");
     if (document.getElementById(elmnt.id + "header")) {
-    /* if present, the header is where you move the DIV from:*/
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
     } else {
-    /* otherwise, move the DIV from anywhere inside the DIV:*/
-    elmnt.onmousedown = dragMouseDown;
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
     }
 
     function dragMouseDown(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
     }
 
     function elementDrag(e) {
-    e = e || window.event;
-    e.preventDefault();
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     }
 
     function closeDragElement() {
-    /* stop moving when mouse button is released:*/
-    document.onmouseup = null;
-    document.onmousemove = null;
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
     }
 }
 
@@ -142,32 +145,32 @@ function showFiles() {
     }
 }
 
-function showEmployees(){
+function showEmployees() {
     var w = document.getElementById("employees");
     w.style.display = "block";
     document.getElementById("folders1").style.display = "none";
 }
 
-function showDocuments(){
+function showDocuments() {
     var w = document.getElementById("Documents");
-    w.style.display = "block";
+    w.style.display = "grid";
     document.getElementById("folders1").style.display = "none";
 }
 
-function showDownloads(){
+function showDownloads() {
     var w = document.getElementById("Downloads");
     w.style.display = "block";
     document.getElementById("folders1").style.display = "none";
 }
 
-function showfolders1(){
+function showfolders1() {
     document.getElementById("folders1").style.display = "block";
     document.getElementById("employees").style.display = "none";
     document.getElementById("Downloads").style.display = "none";
     document.getElementById("Documents").style.display = "none";
 }
 
-function showTerminal(){
+function showTerminal() {
     var x = document.getElementById("terminal");
     if (x.style.display === "none") {
         x.style.display = "block";
@@ -182,18 +185,18 @@ function hackerKeyPress() {
 
     y = document.getElementById("terminalText");
     var last = y.innerHTML;
-    if(last.charAt(last.length - 1) === "|"){
+    if (last.charAt(last.length - 1) === "|") {
         last = setCharAt(last, last.length - 1, "");
         y.innerHTML = last;
     }
 
-    if(text.charAt(textIndex) == "^"){
-        if(blockNum == 1){
+    if (text.charAt(textIndex) == "^") {
+        if (blockNum == 1) {
             prompt = "root:~> "
         }
         y.innerHTML += block[blockNum];
         blockNum++;
-    } else if(text.charAt(textIndex) == "\`"){
+    } else if (text.charAt(textIndex) == "\`") {
         y.innerHTML += prompt;
     } else {
         var str = y.innerHTML;
@@ -204,13 +207,20 @@ function hackerKeyPress() {
     textIndex++;
 }
 
-function setCharAt(str,index,chr) {
-    if(index > str.length-1) return str;
-    return str.substring(0,index) + chr + str.substring(index+1);
+function setCharAt(str, index, chr) {
+    if (index > str.length - 1) return str;
+    return str.substring(0, index) + chr + str.substring(index + 1);
 }
 
-function hideTerminal(){
+function hideTerminal() {
     var x = document.getElementById("terminal");
+    if (x.style.display != "none") {
+        x.style.display = "none";
+    }
+}
+
+function hideIntro() {
+    var x = document.getElementById("intro");
     if (x.style.display != "none") {
         x.style.display = "none";
     }

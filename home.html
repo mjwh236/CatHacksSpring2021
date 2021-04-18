@@ -17,7 +17,7 @@
         <img src="res/Terminal-icon.png" width="80" onclick="showTerminal()">
     </div>
 
-    <div id="window" style="width:480px; height: 275px; display: none;">
+    <div id="window" style="width:480px; height: 295px; display: none;">
         <div id="windowheader">The Matrix</div>
         <div style="  position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="showMatrix()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
         <p id="matrixText">Text</p>
@@ -25,25 +25,24 @@
     <div id="files" style="display: none;">
         <div id="filesheader">DFIING File System</div>
         <div style="  position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="showFiles()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
-        <p id="filesText">Home</p>
-    <span id = "folders1">
-        <button style="padding: 16px 32px;" onclick="showEmployees()">Employees</button>
-        <button style="padding: 16px 32px;" onclick="showDocuments()">Documents</button>
-        <button style="padding: 16px 32px;" onclick="showDownloads()">Downloads</button>
+        <span id="folders1">
+        <button id = "filesButton" onclick="showEmployees()">Board of Directors</button>
+        <button id = "filesButton" onclick="showDocuments()">Documents</button>
+        <button id = "filesButton" onclick="showDownloads()">Downloads</button>
     </span>
-    <div id="employees" style="display: none; text-align: left; padding-left: 12px;">
-        <p>Adam Martinson <br> Rosaleen Pavia<br>Felix Butler <br>Marshall Gimondi<br>Camilla Ellery<br>Amleto Trujillo<br>Andre Granger<br>Beau Randal<br>Brendon Martelli</p>
-        <button onclick="showfolders1()">back</button>
+        <div id="employees" style="display: none; text-align: left; padding-left: 12px; width: 200px">
+            <p>Adam Martinson <br> Rosaleen Pavia<br>Felix Butler <br>Marshall Gimondi<br>Camilla Ellery<br>Amleto Trujillo<br>Andre Granger<br>Beau Randal<br>Brendon Martelli</p>
+            <button onclick="showfolders1()">back</button>
         </div>
         <div id="Documents" style="display: none;">
-            <img src="res/Documents-icon.png" width="60">
-            <img src="res/Documents-icon.png" width="60">
-            <img src="res/Documents-icon.png" width="60">
-            <img src="res/Documents-icon.png" width="60">
-            <img src="res/Documents-icon.png" width="60">
-            <img src="res/Documents-icon.png" width="60">
-            <img src="res/Documents-icon.png" width="60">
-            <img src="res/Documents-icon.png" width="60">
+            <a href="res/REDACTED2.pdf"><img src="res/Documents-icon.png" width="60"></a>
+            <a href="res/INVOICE.pdf"><img src="res/Documents-icon.png" width="60"></a>
+            <a href="res/REDACTED.pdf"><img src="res/Documents-icon.png" width="60"></a>
+            <a href="res/HISTORY.pdf"><img src="res/Documents-icon.png" width="60"></a>
+            <a href="res/REDACTED3.pdf"><img src="res/Documents-icon.png" width="60"></a>
+            <a href="res/MartelliBusinessCards.pdf"><img src="res/Documents-icon.png" width="60"></a>
+            <a href="res/HOLIDAY.pdf"><img src="res/Documents-icon.png" width="60"></a>
+            <a href="res/FAX.pdf"><img src="res/Documents-icon.png" width="60"></a>
             <button onclick="showfolders1()">back</button>
         </div>
         <div id="Downloads" style="display: none;">
@@ -54,8 +53,17 @@
     <div id="terminal" style="width: 600px; height: 400px; white-space: pre-wrap;  display: none; overflow: hidden;">
         <div id="terminalheader" style="position: absolute; top: 0; width: 100%;">Terminal</div>
         <div style="position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="hideTerminal()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
-        <div id = "terminalText" style=" position: absolute; bottom: 0; padding: 5px;"></div>
+        <div id="terminalText" style=" position: absolute; bottom: 0; padding: 5px;"></div>
+    </div>
+
+    <div id="intro">
+        <p>You are a young hacker from the slums of Masskarta. The town is all but owned by DFIING ("defying"), a mega-tech corporation with the goal of bring heaven to earth using virtual reality. Their main audience is the upper class since their systems
+            are so expensive, but there are some lucky few around where you live who have gotten their hands on a machine. For as long as you can remember, your city has been terrorized by a militant faction known as "the Nephilim." You have recently
+            witnessed an exchange that has confirmed your suspicions - DFIING has been behind the Nephilim all along. Your goal is to root through their database and get access to the CEO's computer to find condemning files that you can leak to the public
+            to bring down DFIING and the Nephilim once and for all.</p>
+        <button onclick="hideIntro()">Begin</button>
     </div>
     <script src="app.js"></script>
 </body>
+
 </html>
