@@ -40,6 +40,8 @@ let alpha = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n
     '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '=', ';', ':', '[', '{', ']', '}',
     '\\', '|', '"', "'", ',', '<', '.', '>', '/', '?', ' '
 ];
+
+let userInput = false;
 //let y = document.getElementById("terminal");
 document.getElementById("terminalText").innerHTML = prompt; 
 var myVar = setInterval(matrix, 250);
@@ -175,8 +177,9 @@ function showTerminal(){
     }
 }
 
-function hackerKeyPress() {
-    console.log("Key pressed");
+function hackerKeyPress(e) {
+    //console.log("Key pressed");
+
     y = document.getElementById("terminalText");
     var last = y.innerHTML;
     if(last.charAt(last.length - 1) === "|"){
@@ -210,6 +213,5 @@ function hideTerminal(){
     var x = document.getElementById("terminal");
     if (x.style.display != "none") {
         x.style.display = "none";
-        //x.style.display = "flex";
     }
 }
