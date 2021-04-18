@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="res/style.css">
 </head>
 
-<body id="home" onkeypress="hackerKeyPress()">
+<body id="home" onkeypress="hackerKeyPress(e)">
     <div id="logo">
         <img src="res/DFIINGlogo.png" width="90%">
     </div>
@@ -17,20 +17,23 @@
         <img src="res/Terminal-icon.png" width="80" onclick="showTerminal()">
     </div>
 
-    <div id="window" style="width:480; height: 275; display: none;">
+    <div id="window" style="width:480px; height: 275px; display: none;">
         <div id="windowheader">The Matrix</div>
+        <div style="  position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="showMatrix()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
         <p id="matrixText">Text</p>
     </div>
-    <div id="files" style="display: none; width: 400; height: 300;">
+    <div id="files" style="display: none;">
         <div id="filesheader">DFIING File System</div>
-        <span id="folders1">
-        <button id = "filesButton" onclick="showEmployees()">Employees</button>
-        <button id = "filesButton" onclick="showDocuments()">Documents</button>
-        <button id = "filesButton" onclick="showDownloads()">Downloads</button>
+        <div style="  position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="showFiles()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
+        <p id="filesText">Home</p>
+    <span id = "folders1">
+        <button style="padding: 16px 32px;" onclick="showEmployees()">Employees</button>
+        <button style="padding: 16px 32px;" onclick="showDocuments()">Documents</button>
+        <button style="padding: 16px 32px;" onclick="showDownloads()">Downloads</button>
     </span>
-        <div id="employees" style="display: none; text-align: left; padding-left: 12px;">
-            <p>Adam Martinson <br> Rosaleen Pavia<br>Felix Butler <br>Marshall Gimondi<br>Camilla Ellery<br>Amleto Trujillo<br>Andre Granger<br>Beau Randal<br>Brendon Martelli</p>
-            <button onclick="showfolders1()">back</button>
+    <div id="employees" style="display: none; text-align: left; padding-left: 12px;">
+        <p>Adam Martinson <br> Rosaleen Pavia<br>Felix Butler <br>Marshall Gimondi<br>Camilla Ellery<br>Amleto Trujillo<br>Andre Granger<br>Beau Randal<br>Brendon Martelli</p>
+        <button onclick="showfolders1()">back</button>
         </div>
         <div id="Documents" style="display: none;">
             <img src="res/Documents-icon.png" width="60">
@@ -50,9 +53,9 @@
     </div>
     <div id="terminal" style="width: 600px; height: 400px; white-space: pre-wrap;  display: none; overflow: hidden;">
         <div id="terminalheader" style="position: absolute; top: 0; width: 100%;">Terminal</div>
-        <div id="terminalText" style=" position: absolute; bottom: 0; padding: 5px;"></div>
+        <div style="position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="hideTerminal()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
+        <div id = "terminalText" style=" position: absolute; bottom: 0; padding: 5px;"></div>
     </div>
     <script src="app.js"></script>
 </body>
-
 </html>
