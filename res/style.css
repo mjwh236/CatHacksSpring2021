@@ -138,3 +138,17 @@ body {
     transform: translate(-50%, -50%);
     border-radius: 30px;
 }
+
+#winMessage {
+    background-color: rgba(245, 245, 245, 0.9);
+    color: black;
+    text-align: center;
+    width: 800px;
+    padding: 20px 40px;
+    z-index: 12;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+}
