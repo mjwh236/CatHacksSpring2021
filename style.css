@@ -1,4 +1,4 @@
-:root {
+:root{
     --main-color: rgb(52, 179, 73);
 }
 
@@ -32,7 +32,7 @@ body {
     border: 1px solid #FFFFFF;
     background-color: black;
 }
-
+  
 #windowheader {
     padding: 2px;
     cursor: move;
@@ -48,7 +48,7 @@ body {
     border: 1px solid #FFFFFF;
     background-color: black;
 }
-
+  
 #filesheader {
     padding: 2px;
     cursor: move;
@@ -57,12 +57,39 @@ body {
     color: #fff;
 }
 
+#showFiles {
+    position: relative;
+
+    right: 0;
+}
+
+#filesButton {
+    background-color: aquamarine; 
+    padding: 16px 32px;
+}
+
 #showMatrix {
-    position: absolute;
+    position: absolute; 
     right: 0;
 }
 
 #matrix {
-    background-color: var(--main-color);
+    background-color: aquamarine; 
     padding: 16px 32px;
+}
+
+#terminal {
+    position: absolute;
+    z-index: 9;
+    border: 1px solid #FFFFFF;
+    background-color: black;
+}
+  
+#terminalheader {
+    padding: 2px;
+    cursor: move;
+    z-index: 10;
+    text-align: center;
+    background-color: var(--main-color);
+    color: #fff;
 }

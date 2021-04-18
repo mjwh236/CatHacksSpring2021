@@ -5,27 +5,48 @@
     <meta charset="utf-8">
     <title>DFIING HOME</title>
     <link rel="stylesheet" href="style.css">
-    <script src="index.js"></script>
 </head>
 
-<body id="home">
+<body id="home" onkeypress="hackerKeyPress()">
     <div id="logo">
         <img src="DFIINGlogo.png" width="90%">
     </div>
     <div id="buttons">
-        <img src="System-explorer-icon.png" width="75px" padding="20px" onclick="showFiles()">
-        <img src="Earth-icon.png" width="75px" padding="20px" onclick="showMatrix()">
-        <a href="index.html"><img src="Terminal-icon.png" width="80px" padding="20px"></a>
+        <img src="System-explorer-icon.png" width="75" onclick="showFiles()">
+        <img src="Earth-icon.png" width="75" onclick="showMatrix()">
+        <img src="Terminal-icon.png" width="80" onclick="showTerminal()">
     </div>
 
     <div id="window" style="width:480px; height: 275px; display: none;">
         <div id="windowheader">The Matrix</div>
         <p id="matrixText">Text</p>
     </div>
-    <div id="files" style="width:480px; height: 275px; display: none;">
+    <div id="files" style="display: none;">
         <div id="filesheader">DFIING File System</div>
-        <p id="filesText">Text</p>
+        <p id="filesText">Home</p>
+    <span id = "folders1">
+        <button style="padding: 16px 32px;" onclick="showEmployees()">Employees</button>
+        <button style="padding: 16px 32px;" onclick="showDocuments()">Documents</button>
+        <button style="padding: 16px 32px;" onclick="showDownloads()">Downloads</button>
+    </span>
+    <div id="employees" style="display: none; text-align: left; padding-left: 12px;">
+        <p>Adam Martinson <br> Rosaleen Pavia<br>Felix Butler <br>Marshall Gimondi<br>Camilla Ellery<br>Amleto Trujillo<br>Andre Granger<br>Beau Randal<br>Brendon Martelli</p>
+        <button onclick="showfolders1()">back</button>
+        </div>
+        <div id="Documents" style="display: none;">
+            <p>words.txt</p>
+            <button onclick="showfolders1()">back</button>
+        </div>
+        <div id="Downloads" style="display: none;">
+            <p>Homework.mp4</p>
+            <button onclick="showfolders1()">back</button>
+        </div>
     </div>
+    <div id="terminal" style="width: 600px; height: 400px; white-space: pre-wrap;  display: none; overflow: hidden;">
+        <div id="terminalheader" style="position: absolute; top: 0; width: 100%;">Terminal</div>
+        <div id = "terminalText" style=" position: absolute; bottom: 0; padding: 5px;"></div>
+    </div>
+    <script src="app.js"></script>
 </body>
 
 </html>
