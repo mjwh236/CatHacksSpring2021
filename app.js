@@ -48,6 +48,7 @@ var myVar = setInterval(matrix, 250);
 dragElement(document.getElementById("window"));
 dragElement(document.getElementById("files"));
 dragElement(document.getElementById("terminal"));
+//dragElement(document.getElementById("leakFiles"));
 
 
 function dragElement(elmnt) {
@@ -172,6 +173,16 @@ function showfolders1() {
 
 function showTerminal() {
     var x = document.getElementById("terminal");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+        //x.style.display = "flex";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function showLeakFiles() {
+    var x = document.getElementById("leakFiles");
     if (x.style.display === "none") {
         x.style.display = "block";
         //x.style.display = "flex";

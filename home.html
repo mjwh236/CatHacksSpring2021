@@ -16,6 +16,7 @@
         <img src="res/Earth-icon.png" width="75" onclick="showMatrix()">
         <img src="res/Terminal-icon.png" width="80" onclick="showTerminal()">
     </div>
+    <img id="leak" src="res/skull-3-icon.png" width="90" onclick="showLeakFiles()">
 
     <div id="window" style="width:480px; height: 295px; display: none;">
         <div id="windowheader">The Matrix</div>
@@ -54,6 +55,52 @@
         <div id="terminalheader" style="position: absolute; top: 0; width: 100%;">Terminal</div>
         <div style="position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="hideTerminal()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
         <div id="terminalText" style=" position: absolute; bottom: 0; padding: 5px;"></div>
+    </div>
+    <div id="leakFiles" style="width:500px; height: 350px; display: none;">
+        <div id="leakheader">Select Files to Leak</div>
+        <div style="  position: absolute; top: 0; right: 0; z-index: 12; align-items: center;"><button onclick="showLeakFiles()" style="width: 15px; height: 15px; background-color: crimson;border-radius: 50%; text-align: center;"></button></div>
+        <div>
+            <form>
+                <br><br>
+                <label>Select which files you want to leak:</label>
+                <br><br>
+                <select>
+                    <option value="SELECT">SELECT</option>
+                    <option value="REDACTED2">REDACTED2</option>
+                    <option value="INVOICE">INVOICE</option>
+                    <option value="REDACTED">REDACTED</option>
+                    <option value="HISTORY">HISTORY</option>
+                    <option value="REDACTED3">REDACTED3</option>
+                    <option value="MartelliBusinessCards">MartelliBusinessCards</option>
+                    <option value="HOLIDAY">HOLIDAY</option>
+                    <option value="FAX">FAX</option>
+                </select>
+                <br><br>
+                <select>
+                    <option value="SELECT">SELECT</option>
+                    <option value="REDACTED2">REDACTED2</option>
+                    <option value="INVOICE">INVOICE</option>
+                    <option value="REDACTED">REDACTED</option>
+                    <option value="HISTORY">HISTORY</option>
+                    <option value="REDACTED3">REDACTED3</option>
+                    <option value="MartelliBusinessCards">MartelliBusinessCards</option>
+                    <option value="HOLIDAY">HOLIDAY</option>
+                    <option value="FAX">FAX</option>
+                </select>
+                <br><br>
+                <select>
+                    <option value="SELECT">SELECT</option>
+                    <option value="REDACTED2">REDACTED2</option>
+                    <option value="INVOICE">INVOICE</option>
+                    <option value="REDACTED">REDACTED</option>
+                    <option value="HISTORY">HISTORY</option>
+                    <option value="REDACTED3">REDACTED3</option>
+                    <option value="MartelliBusinessCards">MartelliBusinessCards</option>
+                    <option value="HOLIDAY">HOLIDAY</option>
+                    <option value="FAX">FAX</option>
+                </select>
+            </form>
+        </div>
     </div>
 
     <div id="intro">
